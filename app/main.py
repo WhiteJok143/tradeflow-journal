@@ -26,11 +26,11 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl='token')
 
 # DB dependency
 def get_db():
-db = SessionLocal()
-try:
-yield db
-finally:
-db.close()
+    db = SessionLocal()
+    try:
+    yield db
+    finally:
+    db.close()
 
 
 # Auth helpers
