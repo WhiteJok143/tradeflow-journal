@@ -80,5 +80,7 @@ def login(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depend
 
 
 
-@app.get('/me')
-def read_me(current_user: U
+@app.get("/me")
+def read_me(current_user: User = Depends(get_current_active_user)):
+    return {"email": current_user.email, "role": current_user.role}
+
