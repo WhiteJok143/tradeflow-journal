@@ -8,7 +8,8 @@ from fastapi.security import OAuth2PasswordRequestForm, OAuth2PasswordBearer
 from sqlalchemy.orm import Session
 
 
-from .models import Base, engine, SessionLocal, User, Account, Trade
+from .models import User, Account, Trade
+from .database import Base, engine, SessionLocal
 from .schemas import UserCreate, Token, TradeIn
 from .auth import verify_password, get_password_hash, create_access_token
 from .crud import get_user_by_email, create_user, get_or_create_account, trade_exists, create_trade
